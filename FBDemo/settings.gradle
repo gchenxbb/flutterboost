@@ -1,0 +1,10 @@
+include ':app'
+rootProject.name='FBDemo'
+
+
+//增加内容
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+        settingsDir.parentFile,
+        'flutter_boost_module/.android/include_flutter.groovy'
+))
