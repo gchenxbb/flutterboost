@@ -1,26 +1,19 @@
 package com.ft.fbdemo;
 
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.ft.fbdemo.google.FlutterDemoActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.flutter.embedding.android.*;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static WeakReference<MainActivity> sRef;
 
-    private Button btnOne;
-    private Button btnTwo;
     private Button btnBoostOne;
     private Button btnBoostgoFlutterTwo;
     private Button btnBoostTwo;
@@ -29,12 +22,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //google提供接入方案
-        btnOne = findViewById(R.id.tv_go_flutter_one);
-        btnTwo = findViewById(R.id.tv_go_flutter_two);
-        btnOne.setOnClickListener(this);
-        btnTwo.setOnClickListener(this);
 
         //flutterboost方案
         btnBoostOne = findViewById(R.id.boost_go_flutter_one);
@@ -75,19 +62,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 params3.put("name", "chenx3");
                 //跳转native页面
                 PageRouter.openPageByUrl(MainActivity.this, PageRouter.NATIVE_PAGE_ONE, params3);
-                break;
-            case R.id.tv_go_flutter_one:
-                Intent intent = new Intent(MainActivity.this, FlutterDemoActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("routeName", "first");
-                intent.putExtras(bundle);
-                startActivity(intent);
-                break;
-            case R.id.tv_go_flutter_two:
-                Intent customFlutter = FlutterActivity.withNewEngine()
-                        .initialRoute("someOtherRoute")
-                        .build(MainActivity.this);
-                startActivity(customFlutter);
                 break;
         }
 
