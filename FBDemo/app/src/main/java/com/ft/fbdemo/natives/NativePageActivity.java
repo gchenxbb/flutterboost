@@ -21,7 +21,6 @@ public class NativePageActivity extends AppCompatActivity implements View.OnClic
     private TextView open_url;
     private TextView mOpenNative;
     private TextView mOpenFlutter;
-    private TextView mOpenFlutterFragment;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,11 +40,9 @@ public class NativePageActivity extends AppCompatActivity implements View.OnClic
 
         mOpenNative = findViewById(R.id.open_native);
         mOpenFlutter = findViewById(R.id.open_flutter);
-        mOpenFlutterFragment = findViewById(R.id.open_flutter_fragment);
 
         mOpenNative.setOnClickListener(this);
         mOpenFlutter.setOnClickListener(this);
-        mOpenFlutterFragment.setOnClickListener(this);
     }
 
     @Override
@@ -57,9 +54,7 @@ public class NativePageActivity extends AppCompatActivity implements View.OnClic
         if (v == mOpenNative) {
             PageRouter.openPageByUrl(this, PageRouter.NATIVE_PAGE_ONE, params);
         } else if (v == mOpenFlutter) {
-            PageRouter.openPageByUrl(this, PageRouter.FLUTTER_PAGE_ONE, params);
-        } else if (v == mOpenFlutterFragment) {
-//            PageRouter.openPageByUrl(this, PageRouter.FLUTTER_FRAGMENT_PAGE_URL,params);
+            PageRouter.openPageByUrl(this, PageRouter.FLUTTER_PAGE_TWO, params);
         }
     }
 }

@@ -25,18 +25,9 @@ class TwoPageWidget extends StatelessWidget {
               "This params is,${this.params}",
               style: TextStyle(fontSize: 16.0, color: Colors.deepOrangeAccent),
             ),
-            RaisedButton(
-              onPressed: _onPressBtn,
-              child: new Text('点击去原生页面x2'),
-              color: Colors.blue,
-            )
           ],
         ),
       ),
     );
-  }
-
-  void _onPressBtn() {
-//    FlutterBoost.singleton.open("flutterbus://native_second_page", {},{});
   }
 }

@@ -1,21 +1,7 @@
 include ':app'
 rootProject.name='FBDemo'
 
-
-//增加内容
-//setBinding(new Binding([gradle: this]))
-//evaluate(new File(
-//        settingsDir.parentFile,
-//        'flutter_boost_module/.android/include_flutter.groovy'
-//))
-
-//引用 Flutter 模块
-//setBinding(new Binding([gradle:this]))
-//evaluate(new File(settingsDir.parentFile,'flutter_module/.android/include_flutter.groovy'))
-//include ':flutter_module'
-//project(':flutter_module').projectDir = new File('../flutter_module')
-
 setBinding(new Binding([gradle:this]))
 evaluate(new File('../flutter_module_fb/.android/include_flutter.groovy'))
 include ':flutter_module_fb'
-project(':flutter_module_fb').projectDir = new File('../flutter_fbmodule')
+project(':flutter_module_fb').projectDir = new File('../flutter_module_fb')

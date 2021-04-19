@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
+import 'package:flutter_module_fb/flutter_new_page.dart';
 import 'package:flutter_module_fb/flutter_page_one.dart';
 import 'package:flutter_module_fb/flutter_page_two.dart';
+import 'package:flutter_module_fb/flutter_tab1_page.dart';
+import 'package:flutter_module_fb/flutter_tab2_page.dart';
+import 'package:flutter_module_fb/flutter_tab3_page.dart';
+import 'package:flutter_module_fb/flutter_tab4_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,19 +26,19 @@ class _MyAppState extends State<MyApp> {
 
     //注册 native传递的打开flutter页面的key和页面的关系。
     FlutterBoost.singleton.registerPageBuilders({
-      'first_boost': (pageName, params, _) => TwoPageWidget(
+      'fragment_tab1_boost': (pageName, params, _) => Tab1Page(
             params: params,
             message: pageName,
           ),
-      'second_boost': (pageName, params, _) => TwoPageWidget(
+      'fragment_tab2_boost': (pageName, params, _) => Tab2Page(
             params: params,
             message: pageName,
           ),
-      'tab_boost': (pageName, params, _) => TwoPageWidget(
+      'fragment_tab3_boost': (pageName, params, _) => Tab3Page(
             params: params,
             message: pageName,
           ),
-      'flutterFragment_boost': (pageName, params, _) => TwoPageWidget(
+      'fragment_tab4_boost': (pageName, params, _) => Tab4Page(
             params: params,
             message: pageName,
           ),
@@ -53,7 +58,7 @@ class _MyAppState extends State<MyApp> {
           message: pageName,
         );
       },
-      'flutter_three_page_boost': (pageName, params, _) => TwoPageWidget(
+      'flutter_new_page': (pageName, params, _) => NewPageWidget(
             params: params,
             message: pageName,
           ),

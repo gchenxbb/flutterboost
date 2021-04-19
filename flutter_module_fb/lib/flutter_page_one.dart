@@ -27,18 +27,13 @@ class OnePageWidget extends StatelessWidget {
               style: TextStyle(fontSize: 16.0, color: Colors.red),
             ),
             RaisedButton(
-              onPressed: _onPressBtn1,
+              onPressed: _onOpenNativePage,
               child: new Text('点击去原生页面x1'),
               color: Colors.blue,
             ),
             RaisedButton(
-              onPressed: _onPressBtn2,
-              child: new Text('点击去原生页面x2'),
-              color: Colors.blue,
-            ),
-            RaisedButton(
-              onPressed: _onPressBtn3,
-              child: new Text('点击去flutter页面x1'),
+              onPressed: _onNewFlutterPag,
+              child: new Text('新开一个flutter页面x1'),
               color: Colors.blue,
             ),
           ],
@@ -48,19 +43,9 @@ class OnePageWidget extends StatelessWidget {
   }
 
   //flutter跳转naitve页面
-  void _onPressBtn1() {
+  void _onOpenNativePage() {
     FlutterBoost.singleton.open("flutter://native_page_one", urlParams: {
       "query": {"param1": "aa1", "param2": "aa2", "param3": "aa3"}
-    }).then((Map value) {
-      print(
-          "call me when page is finished. did recieve second route result $value");
-    });
-  }
-
-  //flutter跳转naitve页面
-  void _onPressBtn2() {
-    FlutterBoost.singleton.open("flutter://native_page_two", urlParams: {
-      "query": {"param4": "bbb4", "param5": "bbb5", "param6": "bbb6"}
     }).then((Map value) {
       //当结束该页面调用
       print(
@@ -68,11 +53,12 @@ class OnePageWidget extends StatelessWidget {
     });
   }
 
-  //flutter跳转flutter页面
-  void _onPressBtn3() {
+  //flutter新开一个flutter页面
+  void _onNewFlutterPag() {
     FlutterBoost.singleton
-        .open("flutter://flutter_page_three_from_flutter")
-        .then((Map value) {
+        .open("flutter://flutter_new_page_from_flutter", urlParams: {
+      "query": {"param4": "bbb4", "param5": "bbb5", "param6": "bbb6"}
+    }).then((Map value) {
       print(
           "call me when page is finished. did recieve second route result $value");
     });

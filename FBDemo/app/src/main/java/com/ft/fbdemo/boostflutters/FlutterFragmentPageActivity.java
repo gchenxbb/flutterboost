@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ft.fbdemo.R;
 import com.idlefish.flutterboost.containers.FlutterFragment;
+
 import io.flutter.embedding.android.DrawableSplashScreen;
 import io.flutter.embedding.android.SplashScreen;
 import io.flutter.embedding.android.SplashScreenProvider;
@@ -44,7 +45,7 @@ public class FlutterFragmentPageActivity extends AppCompatActivity implements Vi
         super.onCreate(savedInstanceState);
 
         final ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null) {
+        if (actionBar != null) {
             actionBar.hide();
         }
 
@@ -70,25 +71,23 @@ public class FlutterFragmentPageActivity extends AppCompatActivity implements Vi
         mTab3.setBackgroundColor(Color.WHITE);
         mTab4.setBackgroundColor(Color.WHITE);
 
-        if(mTab1 == v) {
+        if (mTab1 == v) {
             mTab1.setBackgroundColor(Color.YELLOW);
-
-            mFragment= new FlutterFragment.NewEngineFragmentBuilder().url("flutterFragment").build();
-
-        }else if(mTab2 == v) {
+            mFragment = new FlutterFragment.NewEngineFragmentBuilder().url("fragment_tab1_boost").build();
+        } else if (mTab2 == v) {
             mTab2.setBackgroundColor(Color.YELLOW);
-            mFragment= new FlutterFragment.NewEngineFragmentBuilder().url("flutterFragment").build();
-        }else if(mTab3 == v) {
+            mFragment = new FlutterFragment.NewEngineFragmentBuilder().url("fragment_tab2_boost").build();
+        } else if (mTab3 == v) {
             mTab3.setBackgroundColor(Color.YELLOW);
-            mFragment= new FlutterFragment.NewEngineFragmentBuilder().url("flutterFragment").build();
-        }else{
+            mFragment = new FlutterFragment.NewEngineFragmentBuilder().url("fragment_tab3_boost").build();
+        } else {
             mTab4.setBackgroundColor(Color.YELLOW);
-            mFragment= new FlutterFragment.NewEngineFragmentBuilder().url("flutterFragment").build();
+            mFragment = new FlutterFragment.NewEngineFragmentBuilder().url("fragment_tab4_boost").build();
         }
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fragment_stub,mFragment)
+                .replace(R.id.fragment_stub, mFragment)
                 .commit();
     }
 
@@ -103,7 +102,7 @@ public class FlutterFragmentPageActivity extends AppCompatActivity implements Vi
     public SplashScreen provideSplashScreen() {
         Drawable manifestSplashDrawable = getSplashScreenFromManifest();
         if (manifestSplashDrawable != null) {
-            return new DrawableSplashScreen(manifestSplashDrawable, ImageView.ScaleType.CENTER,500L);
+            return new DrawableSplashScreen(manifestSplashDrawable, ImageView.ScaleType.CENTER, 500L);
         } else {
             return null;
         }

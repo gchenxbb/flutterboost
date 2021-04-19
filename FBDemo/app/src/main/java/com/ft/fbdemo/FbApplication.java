@@ -11,14 +11,15 @@ import com.idlefish.flutterboost.Utils;
 import com.idlefish.flutterboost.interfaces.INativeRouter;
 
 import io.flutter.plugin.common.MethodChannel;
-import io.flutter.plugin.common.PluginRegistry;
 
 import java.util.Map;
 
 import io.flutter.embedding.android.FlutterView;
 import io.flutter.plugin.common.StandardMessageCodec;
-import io.flutter.plugins.GeneratedPluginRegistrant;
 
+/**
+ * Application
+ */
 public class FbApplication extends Application {
     public static final String TAG = "FbApplication";
 
@@ -33,7 +34,7 @@ public class FbApplication extends Application {
             }
 
         };
-        FlutterBoost.BoostLifecycleListener boostLifecycleListener =new FlutterBoost.BoostLifecycleListener() {
+        FlutterBoost.BoostLifecycleListener boostLifecycleListener = new FlutterBoost.BoostLifecycleListener() {
             @Override
             public void beforeCreateEngine() {
 
@@ -73,17 +74,6 @@ public class FbApplication extends Application {
 
             }
         };
-
-
-
-//        FlutterBoost.BoostPluginsRegister pluginsRegister = new FlutterBoost.BoostPluginsRegister() {
-//
-//            @Override
-//            public void registerPlugins(PluginRegistry mRegistry) {
-//                GeneratedPluginRegistrant.registerWith(mRegistry);
-//                TextPlatformViewPlugin.register(mRegistry.registrarFor("TextPlatformViewPlugin"));
-//            }
-//        };
 
         Platform platform = new FlutterBoost.ConfigBuilder(this, router)
                 .isDebug(true)

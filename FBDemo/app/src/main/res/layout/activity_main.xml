@@ -16,20 +16,13 @@
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:gravity="center"
-        android:text="Boost去Flutter页面" />
+        android:text="Boost去Flutter页面x1" />
 
     <Button
-        android:id="@+id/boost_go_flutter_two"
+        android:id="@+id/boost_go_fragment"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:gravity="center"
-        android:text="Boost去Flutter页面x2" />
-
-    <Button
-        android:id="@+id/boost_go_native_two"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="Boost去Native页面" />
+        android:text="Boost去 Fragment Native 页面x2" />
 
 </LinearLayout>
