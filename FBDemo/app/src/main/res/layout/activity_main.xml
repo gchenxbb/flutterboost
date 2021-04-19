@@ -5,24 +5,18 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="下面是FlutterBoost跳转" />
-
     <Button
         android:id="@+id/boost_go_flutter_one"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:gravity="center"
-        android:text="Boost去Flutter页面x1" />
+        android:text="Boost 去 Flutter 页面x1" />
 
     <Button
         android:id="@+id/boost_go_fragment"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:gravity="center"
-        android:text="Boost去 Fragment Native 页面x2" />
+        android:text="Boost 去 Fragment Native 页面x2" />
 
 </LinearLayout>
